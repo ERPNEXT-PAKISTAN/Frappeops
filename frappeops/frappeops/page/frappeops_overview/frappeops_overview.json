@@ -1,0 +1,35 @@
+{
+ "creation": "2026-08-13 01:15:00.000000",
+ "docstatus": 0,
+ "doctype": "Page",
+ "icon": "layout-dashboard",
+ "idx": 0,
+ "modified": "2026-08-13 01:15:00.000000",
+ "modified_by": "Administrator",
+ "module": "FrappeOps",
+ "name": "frappeops-overview",
+ "owner": "Administrator",
+ "page_name": "frappeops-overview",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "FrappeOps Administrator"
+  },
+  {
+   "role": "FrappeOps Operator"
+  },
+  {
+   "role": "FrappeOps Developer"
+  },
+  {
+   "role": "FrappeOps Auditor"
+  },
+  {
+   "role": "FrappeOps Viewer"
+  }
+ ],
+ "standard": "Yes",
+ "title": "FrappeOps Overview"
+}

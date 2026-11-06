@@ -1,0 +1,271 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "engine": "InnoDB",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "naming_rule": "By \"Naming Series\" field",
+ "autoname": "naming_series:",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "title_field": "backup_name",
+ "fields": [
+  {
+   "fieldname": "section_auto_1",
+   "fieldtype": "Section Break",
+   "label": ""
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "BKP-.######",
+   "default": "BKP-.######",
+   "reqd": 1
+  },
+  {
+   "fieldname": "backup_name",
+   "fieldtype": "Data",
+   "label": "Backup Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Queued\nRunning\nSuccess\nFailed\nVerified\nExpired",
+   "default": "Queued",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "server",
+   "fieldtype": "Link",
+   "label": "Server",
+   "options": "Server"
+  },
+  {
+   "fieldname": "bench",
+   "fieldtype": "Link",
+   "label": "Bench",
+   "options": "Bench"
+  },
+  {
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Site",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "backup_type",
+   "fieldtype": "Select",
+   "label": "Backup Type",
+   "options": "Database\nFiles\nPrivate Files\nPublic Files\nFull\nConfig",
+   "default": "Full"
+  },
+  {
+   "fieldname": "column_break_auto_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "storage_location",
+   "fieldtype": "Data",
+   "label": "Storage Location"
+  },
+  {
+   "fieldname": "size_mb",
+   "fieldtype": "Float",
+   "label": "Size (MB)"
+  },
+  {
+   "fieldname": "checksum",
+   "fieldtype": "Data",
+   "label": "Checksum"
+  },
+  {
+   "fieldname": "taken_at",
+   "fieldtype": "Datetime",
+   "label": "Taken At"
+  },
+  {
+   "fieldname": "retention_until",
+   "fieldtype": "Date",
+   "label": "Retention Until"
+  },
+  {
+   "fieldname": "operation_job",
+   "fieldtype": "Link",
+   "label": "Operation Job",
+   "options": "Operation Job"
+  },
+  {
+   "fieldname": "offsite_section",
+   "fieldtype": "Section Break",
+   "label": "Offsite"
+  },
+  {
+   "fieldname": "backup_destination",
+   "fieldtype": "Link",
+   "label": "Backup Destination",
+   "options": "Backup Destination"
+  },
+  {
+   "fieldname": "offsite_status",
+   "fieldtype": "Select",
+   "label": "Offsite Status",
+   "options": "\nPending\nUploading\nUploaded\nFailed\nSkipped",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_offsite",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "offsite_uri",
+   "fieldtype": "Data",
+   "label": "Offsite URI"
+  },
+  {
+   "fieldname": "offsite_uploaded_at",
+   "fieldtype": "Datetime",
+   "label": "Offsite Uploaded At"
+  },
+  {
+   "fieldname": "section_wide_3",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "doctype": "DocType",
+ "module": "FrappeOps",
+ "name": "Backup",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Operator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Developer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Auditor",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Viewer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "field_order": [
+  "section_auto_1",
+  "naming_series",
+  "backup_name",
+  "status",
+  "server",
+  "bench",
+  "site",
+  "backup_type",
+  "column_break_auto_2",
+  "storage_location",
+  "size_mb",
+  "checksum",
+  "taken_at",
+  "retention_until",
+  "operation_job",
+  "offsite_section",
+  "backup_destination",
+  "offsite_status",
+  "column_break_offsite",
+  "offsite_uri",
+  "offsite_uploaded_at",
+  "section_wide_3",
+  "notes"
+ ]
+}

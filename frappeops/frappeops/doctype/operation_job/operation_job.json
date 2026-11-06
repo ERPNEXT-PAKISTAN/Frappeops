@@ -1,0 +1,300 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "engine": "InnoDB",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "naming_rule": "By \"Naming Series\" field",
+ "autoname": "naming_series:",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "title_field": "operation_type",
+ "is_submittable": 0,
+ "fields": [
+  {
+   "fieldname": "section_auto_1",
+   "fieldtype": "Section Break",
+   "label": ""
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "OP-.######",
+   "default": "OP-.######",
+   "reqd": 1
+  },
+  {
+   "fieldname": "operation_type",
+   "fieldtype": "Data",
+   "label": "Operation Type",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Queued\nPlanning\nWaiting for Approval\nRunning\nVerifying\nSuccess\nFailed\nCancelled\nRolled Back",
+   "default": "Queued",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_auto_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "risk_level",
+   "fieldtype": "Select",
+   "label": "Risk Level",
+   "options": "Low\nMedium\nHigh\nCritical",
+   "default": "Low",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "progress",
+   "fieldtype": "Percent",
+   "label": "Progress",
+   "default": "0"
+  },
+  {
+   "fieldname": "targets_section",
+   "fieldtype": "Section Break",
+   "label": "Targets"
+  },
+  {
+   "fieldname": "server",
+   "fieldtype": "Link",
+   "label": "Server",
+   "options": "Server"
+  },
+  {
+   "fieldname": "bench",
+   "fieldtype": "Link",
+   "label": "Bench",
+   "options": "Bench"
+  },
+  {
+   "fieldname": "column_break_auto_3",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Site"
+  },
+  {
+   "fieldname": "requested_by",
+   "fieldtype": "Link",
+   "label": "Requested By",
+   "options": "User",
+   "default": "__user"
+  },
+  {
+   "fieldname": "timing_section",
+   "fieldtype": "Section Break",
+   "label": "Timing"
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "label": "Started At"
+  },
+  {
+   "fieldname": "finished_at",
+   "fieldtype": "Datetime",
+   "label": "Finished At"
+  },
+  {
+   "fieldname": "column_break_auto_4",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "exit_code",
+   "fieldtype": "Int",
+   "label": "Exit Code"
+  },
+  {
+   "fieldname": "payload_section",
+   "fieldtype": "Section Break",
+   "label": "Payload / Output"
+  },
+  {
+   "fieldname": "approval_required",
+   "fieldtype": "Check",
+   "label": "Approval Required",
+   "default": "0"
+  },
+  {
+   "fieldname": "column_break_auto_5",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_wide_6",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "parameters_json",
+   "fieldtype": "Code",
+   "label": "Parameters (JSON)",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "output",
+   "fieldtype": "Long Text",
+   "label": "Output"
+  },
+  {
+   "fieldname": "error",
+   "fieldtype": "Long Text",
+   "label": "Error"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Operator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Developer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Auditor",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Viewer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "doctype": "DocType",
+ "module": "FrappeOps",
+ "name": "Operation Job",
+ "field_order": [
+  "section_auto_1",
+  "naming_series",
+  "operation_type",
+  "status",
+  "column_break_auto_2",
+  "risk_level",
+  "progress",
+  "targets_section",
+  "server",
+  "bench",
+  "column_break_auto_3",
+  "site",
+  "requested_by",
+  "timing_section",
+  "started_at",
+  "finished_at",
+  "column_break_auto_4",
+  "exit_code",
+  "payload_section",
+  "approval_required",
+  "column_break_auto_5",
+  "approved_by",
+  "section_wide_6",
+  "parameters_json",
+  "output",
+  "error",
+  "notes"
+ ]
+}

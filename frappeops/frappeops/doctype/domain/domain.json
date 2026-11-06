@@ -1,0 +1,268 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "engine": "InnoDB",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "naming_rule": "By fieldname",
+ "autoname": "field:domain_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "fields": [
+  {
+   "fieldname": "section_auto_1",
+   "fieldtype": "Section Break",
+   "label": ""
+  },
+  {
+   "fieldname": "domain_name",
+   "fieldtype": "Data",
+   "label": "Domain",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Site",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "server",
+   "fieldtype": "Link",
+   "label": "Server",
+   "options": "Server"
+  },
+  {
+   "fieldname": "domain_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Primary\nAlias\nSubdomain",
+   "default": "Primary"
+  },
+  {
+   "fieldname": "protocol",
+   "fieldtype": "Select",
+   "label": "Protocol",
+   "options": "HTTP\nHTTPS",
+   "default": "HTTP"
+  },
+  {
+   "fieldname": "column_break_auto_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "port",
+   "fieldtype": "Int",
+   "label": "Port",
+   "default": "80"
+  },
+  {
+   "fieldname": "dns_status",
+   "fieldtype": "Select",
+   "label": "DNS Status",
+   "options": "Unknown\nValid\nInvalid\nPending",
+   "default": "Unknown"
+  },
+  {
+   "fieldname": "nginx_status",
+   "fieldtype": "Select",
+   "label": "Nginx Status",
+   "options": "Unknown\nConfigured\nMissing\nError",
+   "default": "Unknown"
+  },
+  {
+   "fieldname": "ssl_status",
+   "fieldtype": "Select",
+   "label": "SSL Status",
+   "options": "Unknown\nNone\nValid\nExpiring\nExpired\nError",
+   "default": "Unknown"
+  },
+  {
+   "fieldname": "apply_status",
+   "fieldtype": "Select",
+   "label": "Apply Status",
+   "options": "Draft\nReady\nApplied\nFailed",
+   "default": "Draft",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "last_applied_at",
+   "fieldtype": "Datetime",
+   "label": "Last Applied At"
+  },
+  {
+   "fieldname": "nginx_conf_path",
+   "fieldtype": "Data",
+   "label": "Nginx Draft Path",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_wide_3",
+   "fieldtype": "Section Break",
+   "label": "Nginx Draft"
+  },
+  {
+   "fieldname": "nginx_draft",
+   "fieldtype": "Code",
+   "label": "Nginx Draft",
+   "options": "Nginx"
+  },
+  {
+   "fieldname": "section_wide_4",
+   "fieldtype": "Section Break",
+   "label": "Live / Diff"
+  },
+  {
+   "fieldname": "nginx_live_preview",
+   "fieldtype": "Code",
+   "label": "Live Conf Preview",
+   "options": "Nginx",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_diff",
+   "fieldtype": "Code",
+   "label": "Last Diff",
+   "options": "Diff",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_wide_5",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "doctype": "DocType",
+ "module": "FrappeOps",
+ "name": "Domain",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Operator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Developer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Auditor",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Viewer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "field_order": [
+  "section_auto_1",
+  "domain_name",
+  "site",
+  "server",
+  "domain_type",
+  "protocol",
+  "column_break_auto_2",
+  "port",
+  "dns_status",
+  "nginx_status",
+  "ssl_status",
+  "apply_status",
+  "last_applied_at",
+  "nginx_conf_path",
+  "section_wide_3",
+  "nginx_draft",
+  "section_wide_4",
+  "nginx_live_preview",
+  "last_diff",
+  "section_wide_5",
+  "notes"
+ ]
+}

@@ -1,0 +1,16 @@
+---
+description: FrappeOps safe development rules for agents
+globs:
+  - apps/frappeops/**
+alwaysApply: false
+---
+
+# FrappeOps agent rules
+
+- Develop only against the control site `frappeops.local` unless the user explicitly directs otherwise.
+- Never drop, uninstall, or destructively migrate the protected site `ss.frappe.my`.
+- Do not invent credentials; do not commit secrets.
+- Do not present unimplemented operations as working.
+- Prefer service modules under `frappeops/services/` for domain logic.
+- All infrastructure mutations must be representable as auditable Operation Jobs.
+- Ask before nginx/SSL/DNS/firewall/SSH or any production-impacting change.

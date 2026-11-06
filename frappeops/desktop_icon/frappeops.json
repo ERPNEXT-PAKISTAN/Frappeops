@@ -1,0 +1,20 @@
+{
+ "app": "frappeops",
+ "creation": "2026-08-13 01:15:00.000000",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon_type": "App",
+ "idx": 0,
+ "label": "FrappeOps",
+ "link": "/desk/frappeops",
+ "link_type": "External",
+ "logo_url": "/assets/frappeops/images/frappeops-logo.svg",
+ "modified": "2026-08-13 01:15:00.000000",
+ "modified_by": "Administrator",
+ "name": "FrappeOps",
+ "owner": "Administrator",
+ "restrict_removal": 1,
+ "roles": [],
+ "standard": 1
+}

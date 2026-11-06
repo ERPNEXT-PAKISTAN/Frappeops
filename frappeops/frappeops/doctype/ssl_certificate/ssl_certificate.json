@@ -1,0 +1,211 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "engine": "InnoDB",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "naming_rule": "By \"Naming Series\" field",
+ "autoname": "naming_series:",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "common_name",
+ "fields": [
+  {
+   "fieldname": "section_auto_1",
+   "fieldtype": "Section Break",
+   "label": ""
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "SSL-.####",
+   "default": "SSL-.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "common_name",
+   "fieldtype": "Data",
+   "label": "Common Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "domain",
+   "fieldtype": "Link",
+   "label": "Domain",
+   "options": "Domain"
+  },
+  {
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Site"
+  },
+  {
+   "fieldname": "server",
+   "fieldtype": "Link",
+   "label": "Server",
+   "options": "Server"
+  },
+  {
+   "fieldname": "column_break_auto_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "issuer",
+   "fieldtype": "Data",
+   "label": "Issuer"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Unknown\nValid\nExpiring\nExpired\nRevoked\nError",
+   "default": "Unknown",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "not_before",
+   "fieldtype": "Datetime",
+   "label": "Not Before"
+  },
+  {
+   "fieldname": "not_after",
+   "fieldtype": "Datetime",
+   "label": "Not After"
+  },
+  {
+   "fieldname": "auto_renew",
+   "fieldtype": "Check",
+   "label": "Auto Renew",
+   "default": "0"
+  },
+  {
+   "fieldname": "section_wide_3",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "doctype": "DocType",
+ "module": "FrappeOps",
+ "name": "SSL Certificate",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Operator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Developer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Auditor",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Viewer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "field_order": [
+  "section_auto_1",
+  "naming_series",
+  "common_name",
+  "domain",
+  "site",
+  "server",
+  "column_break_auto_2",
+  "issuer",
+  "status",
+  "not_before",
+  "not_after",
+  "auto_renew",
+  "section_wide_3",
+  "notes"
+ ]
+}

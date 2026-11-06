@@ -1,0 +1,358 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "engine": "InnoDB",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "naming_rule": "",
+ "issingle": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Operator",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Developer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Auditor",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Viewer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "fields": [
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "default_organization",
+   "fieldtype": "Link",
+   "label": "Default Organization",
+   "options": "Organization"
+  },
+  {
+   "fieldname": "protect_existing_sites",
+   "fieldtype": "Check",
+   "label": "Protect Existing Sites",
+   "default": "1"
+  },
+  {
+   "fieldname": "column_break_auto_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "enable_remote_agents",
+   "fieldtype": "Check",
+   "label": "Enable Remote Agents",
+   "default": "0"
+  },
+  {
+   "fieldname": "enable_ai_features",
+   "fieldtype": "Check",
+   "label": "Enable AI Features",
+   "default": "0",
+   "description": "Required for Ollama/model planners. Local rule planner always works."
+  },
+  {
+   "fieldname": "default_ai_provider",
+   "fieldtype": "Link",
+   "label": "Default AI Provider",
+   "options": "AI Provider"
+  },
+  {
+   "fieldname": "allow_public_ai_urls",
+   "fieldtype": "Check",
+   "label": "Allow Public AI URLs",
+   "default": "0",
+   "description": "By default AI providers may only use loopback URLs (e.g. Ollama on 127.0.0.1)."
+  },
+  {
+   "fieldname": "provisioning_section",
+   "fieldtype": "Section Break",
+   "label": "Provisioning"
+  },
+  {
+   "fieldname": "mariadb_root_password",
+   "fieldtype": "Password",
+   "label": "MariaDB Root Password",
+   "description": "Used only to create disposable test-*.local sites. Never logged."
+  },
+  {
+   "fieldname": "column_break_auto_prov",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "allow_test_site_create",
+   "fieldtype": "Check",
+   "label": "Allow Test Site Create",
+   "default": "1",
+   "description": "Only names matching test-<name>.local are accepted."
+  },
+  {
+   "fieldname": "monitoring_section",
+   "fieldtype": "Section Break",
+   "label": "Monitoring Thresholds"
+  },
+  {
+   "fieldname": "disk_warn_percent",
+   "fieldtype": "Float",
+   "label": "Disk Warn %",
+   "default": "80"
+  },
+  {
+   "fieldname": "disk_crit_percent",
+   "fieldtype": "Float",
+   "label": "Disk Critical %",
+   "default": "90"
+  },
+  {
+   "fieldname": "column_break_auto_mon",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "ram_warn_percent",
+   "fieldtype": "Float",
+   "label": "RAM Warn %",
+   "default": "85"
+  },
+  {
+   "fieldname": "ram_crit_percent",
+   "fieldtype": "Float",
+   "label": "RAM Critical %",
+   "default": "95"
+  },
+  {
+   "fieldname": "backup_section",
+   "fieldtype": "Section Break",
+   "label": "Backup Retention & Offsite"
+  },
+  {
+   "fieldname": "backup_retention_days",
+   "fieldtype": "Int",
+   "label": "Backup Retention Days",
+   "default": "30",
+   "description": "Used to set retention_until. Expired backups are never deleted silently."
+  },
+  {
+   "fieldname": "default_backup_destination",
+   "fieldtype": "Link",
+   "label": "Default Backup Destination",
+   "options": "Backup Destination",
+   "description": "S3 / Drive / Dropbox destination used for offsite upload."
+  },
+  {
+   "fieldname": "column_break_auto_bak",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "allow_backup_purge",
+   "fieldtype": "Check",
+   "label": "Allow Backup Purge",
+   "default": "0",
+   "description": "Required before purge_expired can delete files. Still needs typed PURGE."
+  },
+  {
+   "fieldname": "auto_upload_backups",
+   "fieldtype": "Check",
+   "label": "Auto Upload Backups Offsite",
+   "default": "0",
+   "description": "After local site.backup succeeds, upload to Default Backup Destination."
+  },
+  {
+   "fieldname": "bench_ssl_section",
+   "fieldtype": "Section Break",
+   "label": "Bench & SSL Gates"
+  },
+  {
+   "fieldname": "allow_bench_restart",
+   "fieldtype": "Check",
+   "label": "Allow Bench Restart",
+   "default": "0",
+   "description": "Shared Supervisor restart briefly interrupts all sites on this host, including protected. Still needs typed RESTART."
+  },
+  {
+   "fieldname": "column_break_auto_bssl",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "allow_ssl_issue",
+   "fieldtype": "Check",
+   "label": "Allow SSL Issue",
+   "default": "0",
+   "description": "Certbot for public domains only. Still needs typed ISSUE. Defaults to dry-run."
+  },
+  {
+   "fieldname": "allow_public_agent_urls",
+   "fieldtype": "Check",
+   "label": "Allow Public Agent URLs",
+   "default": "0",
+   "description": "By default outbound poll only allows loopback/private listen_url hosts (SSRF guard)."
+  },
+  {
+   "fieldname": "safety_section",
+   "fieldtype": "Section Break",
+   "label": "Safety"
+  },
+  {
+   "fieldname": "require_typed_confirmation_for_critical",
+   "fieldtype": "Check",
+   "label": "Require Typed Confirmation for Critical Ops",
+   "default": "1"
+  },
+  {
+   "fieldname": "column_break_auto_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "allow_arbitrary_shell",
+   "fieldtype": "Check",
+   "label": "Allow Arbitrary Shell (Dangerous)",
+   "default": "0",
+   "description": "Must remain disabled in production."
+  },
+  {
+   "fieldname": "section_wide_3",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "feature_flags_json",
+   "fieldtype": "Code",
+   "label": "Feature Flags (JSON)",
+   "options": "JSON"
+  }
+ ],
+ "doctype": "DocType",
+ "module": "FrappeOps",
+ "name": "FrappeOps Settings",
+ "field_order": [
+  "general_section",
+  "default_organization",
+  "protect_existing_sites",
+  "column_break_auto_1",
+  "enable_remote_agents",
+  "enable_ai_features",
+  "default_ai_provider",
+  "allow_public_ai_urls",
+  "provisioning_section",
+  "mariadb_root_password",
+  "column_break_auto_prov",
+  "allow_test_site_create",
+  "monitoring_section",
+  "disk_warn_percent",
+  "disk_crit_percent",
+  "column_break_auto_mon",
+  "ram_warn_percent",
+  "ram_crit_percent",
+  "backup_section",
+  "backup_retention_days",
+  "default_backup_destination",
+  "column_break_auto_bak",
+  "allow_backup_purge",
+  "auto_upload_backups",
+  "bench_ssl_section",
+  "allow_bench_restart",
+  "column_break_auto_bssl",
+  "allow_ssl_issue",
+  "allow_public_agent_urls",
+  "safety_section",
+  "require_typed_confirmation_for_critical",
+  "column_break_auto_2",
+  "allow_arbitrary_shell",
+  "section_wide_3",
+  "feature_flags_json"
+ ]
+}

@@ -11,21 +11,21 @@ app_license = "mit"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "frappeops",
-# 		"logo": "/assets/frappeops/logo.png",
-# 		"title": "FrappeOps",
-# 		"route": "/frappeops",
-# 		"has_permission": "frappeops.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "frappeops",
+		"logo": "/assets/frappeops/images/frappeops-logo.svg",
+		"title": "FrappeOps",
+		"route": "/app/frappeops-overview",
+		"has_permission": "frappeops.api.permission.has_app_permission",
+	}
+]
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/frappeops/css/frappeops.css"
+app_include_css = "/assets/frappeops/css/frappeops.css?v=5"
 # app_include_js = "/assets/frappeops/js/frappeops.js"
 
 # include js, css files in header of web template
@@ -86,7 +86,8 @@ app_license = "mit"
 # ------------
 
 # before_install = "frappeops.install.before_install"
-# after_install = "frappeops.install.after_install"
+after_install = "frappeops.install.after_install"
+after_migrate = "frappeops.install.after_migrate"
 
 # Uninstallation
 # ------------
@@ -149,23 +150,21 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"frappeops.tasks.all"
-# 	],
-# 	"daily": [
-# 		"frappeops.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"frappeops.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"frappeops.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"frappeops.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"cron": {
+		"*/5 * * * *": [
+			"frappeops.services.agents.heartbeat.mark_stale_agents_offline",
+			"frappeops.tasks.monitor_poll",
+			"frappeops.tasks.fail_stale_jobs",
+			"frappeops.tasks.agent_outbound_poll",
+		],
+		"*/2 * * * *": [
+			"frappeops.tasks.local_agent_heartbeat",
+		],
+	},
+}
+
+commands = ["frappeops.commands.commands"]
 
 # Testing
 # -------

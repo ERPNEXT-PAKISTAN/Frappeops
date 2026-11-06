@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="FrappeOps">
+  <rect width="128" height="128" rx="24" fill="#0F766E"/>
+  <path d="M34 86V42h18c14 0 22 7 22 18s-8 18-22 18H52v8H34zm18-22c6 0 10-3 10-8s-4-8-10-8H52v16z" fill="#ECFDF5"/>
+  <circle cx="92" cy="40" r="8" fill="#99F6E4"/>
+  <circle cx="92" cy="64" r="8" fill="#5EEAD4"/>
+  <circle cx="92" cy="88" r="8" fill="#2DD4BF"/>
+  <path d="M92 48v8M92 72v8" stroke="#ECFDF5" stroke-width="4" stroke-linecap="round"/>
+</svg>

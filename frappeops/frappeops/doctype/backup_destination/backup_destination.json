@@ -1,0 +1,205 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "engine": "InnoDB",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-13 12:00:00.000000",
+ "naming_rule": "By fieldname",
+ "autoname": "field:destination_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "title_field": "destination_name",
+ "fields": [
+  {
+   "fieldname": "section_main",
+   "fieldtype": "Section Break",
+   "label": "Destination"
+  },
+  {
+   "fieldname": "destination_name",
+   "fieldtype": "Data",
+   "label": "Destination Name",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "provider",
+   "fieldtype": "Select",
+   "label": "Provider",
+   "options": "S3 Compatible\nAWS S3\nGoogle Drive\nDropbox\nLocal",
+   "default": "S3 Compatible",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled",
+   "default": "1",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "label": "Default Destination",
+   "default": "0"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "prefix",
+   "fieldtype": "Data",
+   "label": "Path Prefix",
+   "default": "frappeops-backups",
+   "description": "Folder / key prefix under the bucket or rclone remote."
+  },
+  {
+   "fieldname": "rclone_remote",
+   "fieldtype": "Data",
+   "label": "Rclone Remote",
+   "description": "Required for Google Drive / Dropbox (e.g. gdrive or dropbox). Optional fallback for S3."
+  },
+  {
+   "fieldname": "s3_section",
+   "fieldtype": "Section Break",
+   "label": "S3 / S3-Compatible",
+   "depends_on": "eval:doc.provider=='S3 Compatible' || doc.provider=='AWS S3'"
+  },
+  {
+   "fieldname": "bucket",
+   "fieldtype": "Data",
+   "label": "Bucket"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Data",
+   "label": "Region",
+   "default": "us-east-1"
+  },
+  {
+   "fieldname": "endpoint_url",
+   "fieldtype": "Data",
+   "label": "Endpoint URL",
+   "description": "Leave blank for AWS. Contabo/MinIO/Backblaze: https://…"
+  },
+  {
+   "fieldname": "column_break_s3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "access_key_id",
+   "fieldtype": "Data",
+   "label": "Access Key ID"
+  },
+  {
+   "fieldname": "secret_access_key",
+   "fieldtype": "Password",
+   "label": "Secret Access Key"
+  },
+  {
+   "fieldname": "path_style",
+   "fieldtype": "Check",
+   "label": "Path-Style Addressing",
+   "default": "1",
+   "description": "Often required for MinIO / Contabo Object Storage."
+  },
+  {
+   "fieldname": "section_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes",
+   "description": "Drive/Dropbox: install rclone, rclone config, set Rclone Remote. Never put secrets in Notes."
+  }
+ ],
+ "field_order": [
+  "section_main",
+  "destination_name",
+  "provider",
+  "enabled",
+  "is_default",
+  "column_break_1",
+  "prefix",
+  "rclone_remote",
+  "s3_section",
+  "bucket",
+  "region",
+  "endpoint_url",
+  "column_break_s3",
+  "access_key_id",
+  "secret_access_key",
+  "path_style",
+  "section_notes",
+  "notes"
+ ],
+ "doctype": "DocType",
+ "module": "FrappeOps",
+ "name": "Backup Destination",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Operator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Auditor",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Viewer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1
+  }
+ ]
+}

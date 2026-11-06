@@ -1,0 +1,284 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "engine": "InnoDB",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "naming_rule": "By \"Naming Series\" field",
+ "autoname": "naming_series:",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "title_field": "agent_name",
+ "fields": [
+  {
+   "fieldname": "section_auto_1",
+   "fieldtype": "Section Break",
+   "label": ""
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "AGT-.####",
+   "default": "AGT-.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "label": "Agent Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "server",
+   "fieldtype": "Link",
+   "label": "Server",
+   "options": "Server",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nEnrolled\nOnline\nOffline\nRevoked",
+   "default": "Pending",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_auto_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "agent_version",
+   "fieldtype": "Data",
+   "label": "Agent Version"
+  },
+  {
+   "fieldname": "last_heartbeat",
+   "fieldtype": "Datetime",
+   "label": "Last Heartbeat"
+  },
+  {
+   "fieldname": "enrollment_token_hint",
+   "fieldtype": "Data",
+   "label": "Enrollment Token Hint",
+   "read_only": 1,
+   "description": "Never stores the raw token."
+  },
+  {
+   "fieldname": "enrollment_expires_at",
+   "fieldtype": "Datetime",
+   "label": "Enrollment Expires At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "revoked",
+   "fieldtype": "Check",
+   "label": "Revoked",
+   "default": "0"
+  },
+  {
+   "fieldname": "section_poll",
+   "fieldtype": "Section Break",
+   "label": "Outbound Poll (control plane → agent)"
+  },
+  {
+   "fieldname": "listen_url",
+   "fieldtype": "Data",
+   "label": "Listen URL",
+   "description": "Agent HTTP base URL, e.g. http://127.0.0.1:18765 (SSRF-restricted)."
+  },
+  {
+   "fieldname": "poll_enabled",
+   "fieldtype": "Check",
+   "label": "Poll Enabled",
+   "default": "0"
+  },
+  {
+   "fieldname": "column_break_auto_poll",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "last_poll_at",
+   "fieldtype": "Datetime",
+   "label": "Last Poll At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_poll_status",
+   "fieldtype": "Data",
+   "label": "Last Poll Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_secrets",
+   "fieldtype": "Section Break",
+   "label": "Credentials"
+  },
+  {
+   "fieldname": "enrollment_token_hash",
+   "fieldtype": "Data",
+   "label": "Enrollment Token Hash",
+   "read_only": 1
+  },
+  {
+   "fieldname": "api_key_hash",
+   "fieldtype": "Data",
+   "label": "API Key Hash",
+   "read_only": 1,
+   "description": "Used to authenticate agent → control plane pushes."
+  },
+  {
+   "fieldname": "api_key_secret",
+   "fieldtype": "Password",
+   "label": "API Key (encrypted)",
+   "description": "Encrypted copy for control-plane outbound poll only. Cleared on revoke."
+  },
+  {
+   "fieldname": "section_wide_3",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "permission_scope",
+   "fieldtype": "Small Text",
+   "label": "Permission Scope",
+   "description": "Comma-separated: discover, health, list_sites, backup_site, heartbeat"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Operator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Developer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Auditor",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Viewer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "doctype": "DocType",
+ "module": "FrappeOps",
+ "name": "Server Agent",
+ "field_order": [
+  "section_auto_1",
+  "naming_series",
+  "agent_name",
+  "server",
+  "status",
+  "column_break_auto_2",
+  "agent_version",
+  "last_heartbeat",
+  "enrollment_token_hint",
+  "enrollment_expires_at",
+  "revoked",
+  "section_poll",
+  "listen_url",
+  "poll_enabled",
+  "column_break_auto_poll",
+  "last_poll_at",
+  "last_poll_status",
+  "section_secrets",
+  "enrollment_token_hash",
+  "api_key_hash",
+  "api_key_secret",
+  "section_wide_3",
+  "permission_scope",
+  "notes"
+ ]
+}

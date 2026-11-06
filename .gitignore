@@ -53,3 +53,13 @@ jspm_packages/
 
 # Aider AI Chat
 .aider*
+
+# FrappeOps secrets / local overrides
+.env
+.env.*
+*.pem
+*.key
+*credentials*
+*secret*
+sites/**/private/
+.frappeops_admin_password

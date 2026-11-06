@@ -1,0 +1,234 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "engine": "InnoDB",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "naming_rule": "By \"Naming Series\" field",
+ "autoname": "naming_series:",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "title_field": "command_name",
+ "fields": [
+  {
+   "fieldname": "section_auto_1",
+   "fieldtype": "Section Break",
+   "label": ""
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CMD-.######",
+   "default": "CMD-.######",
+   "reqd": 1
+  },
+  {
+   "fieldname": "command_name",
+   "fieldtype": "Data",
+   "label": "Command Name",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "Allowlisted command key only."
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Queued\nRunning\nSuccess\nFailed\nCancelled",
+   "default": "Queued",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "server",
+   "fieldtype": "Link",
+   "label": "Server",
+   "options": "Server"
+  },
+  {
+   "fieldname": "bench",
+   "fieldtype": "Link",
+   "label": "Bench",
+   "options": "Bench"
+  },
+  {
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Site"
+  },
+  {
+   "fieldname": "column_break_auto_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "operation_job",
+   "fieldtype": "Link",
+   "label": "Operation Job",
+   "options": "Operation Job"
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "label": "Started At"
+  },
+  {
+   "fieldname": "finished_at",
+   "fieldtype": "Datetime",
+   "label": "Finished At"
+  },
+  {
+   "fieldname": "exit_code",
+   "fieldtype": "Int",
+   "label": "Exit Code"
+  },
+  {
+   "fieldname": "executed_by",
+   "fieldtype": "Link",
+   "label": "Executed By",
+   "options": "User",
+   "default": "__user"
+  },
+  {
+   "fieldname": "section_wide_3",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "arguments_json",
+   "fieldtype": "Code",
+   "label": "Arguments (JSON)",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "stdout",
+   "fieldtype": "Long Text",
+   "label": "Stdout"
+  },
+  {
+   "fieldname": "stderr",
+   "fieldtype": "Long Text",
+   "label": "Stderr"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Operator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Developer",
+   "read": 1,
+   "write": 1,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Auditor",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Viewer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "doctype": "DocType",
+ "module": "FrappeOps",
+ "name": "Command Execution",
+ "field_order": [
+  "section_auto_1",
+  "naming_series",
+  "command_name",
+  "status",
+  "server",
+  "bench",
+  "site",
+  "column_break_auto_2",
+  "operation_job",
+  "started_at",
+  "finished_at",
+  "exit_code",
+  "executed_by",
+  "section_wide_3",
+  "arguments_json",
+  "stdout",
+  "stderr"
+ ]
+}

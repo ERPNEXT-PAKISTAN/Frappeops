@@ -1,0 +1,292 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "engine": "InnoDB",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "naming_rule": "By \"Naming Series\" field",
+ "autoname": "naming_series:",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "title_field": "bench_name",
+ "search_fields": "bench_name,bench_path",
+ "fields": [
+  {
+   "fieldname": "section_auto_1",
+   "fieldtype": "Section Break",
+   "label": ""
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "BCH-.####",
+   "default": "BCH-.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bench_name",
+   "fieldtype": "Data",
+   "label": "Bench Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "server",
+   "fieldtype": "Link",
+   "label": "Server",
+   "options": "Server",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "organization",
+   "fieldtype": "Link",
+   "label": "Organization",
+   "options": "Organization"
+  },
+  {
+   "fieldname": "column_break_auto_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Unknown\nHealthy\nWarning\nCritical\nOffline\nMaintenance",
+   "default": "Unknown",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "bench_path",
+   "fieldtype": "Data",
+   "label": "Bench Path",
+   "reqd": 1
+  },
+  {
+   "fieldname": "environment",
+   "fieldtype": "Select",
+   "label": "Environment",
+   "options": "Development\nTesting\nQA\nStaging\nProduction\nDR",
+   "default": "Development"
+  },
+  {
+   "fieldname": "versions_section",
+   "fieldtype": "Section Break",
+   "label": "Versions"
+  },
+  {
+   "fieldname": "frappe_version",
+   "fieldtype": "Data",
+   "label": "Frappe Version"
+  },
+  {
+   "fieldname": "bench_version",
+   "fieldtype": "Data",
+   "label": "Bench Version"
+  },
+  {
+   "fieldname": "python_version",
+   "fieldtype": "Data",
+   "label": "Python Version"
+  },
+  {
+   "fieldname": "column_break_auto_3",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "node_version",
+   "fieldtype": "Data",
+   "label": "Node Version"
+  },
+  {
+   "fieldname": "git_branch",
+   "fieldtype": "Data",
+   "label": "Git Branch"
+  },
+  {
+   "fieldname": "runtime_section",
+   "fieldtype": "Section Break",
+   "label": "Runtime"
+  },
+  {
+   "fieldname": "scheduler_state",
+   "fieldtype": "Select",
+   "label": "Scheduler",
+   "options": "Unknown\nEnabled\nDisabled\nPaused",
+   "default": "Unknown"
+  },
+  {
+   "fieldname": "worker_count",
+   "fieldtype": "Int",
+   "label": "Worker Count"
+  },
+  {
+   "fieldname": "webserver_port",
+   "fieldtype": "Int",
+   "label": "Webserver Port"
+  },
+  {
+   "fieldname": "column_break_auto_4",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "socketio_port",
+   "fieldtype": "Int",
+   "label": "SocketIO Port"
+  },
+  {
+   "fieldname": "last_health_check",
+   "fieldtype": "Datetime",
+   "label": "Last Health Check"
+  },
+  {
+   "fieldname": "is_protected",
+   "fieldtype": "Check",
+   "label": "Protected",
+   "default": "0"
+  },
+  {
+   "fieldname": "section_wide_5",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "doctype": "DocType",
+ "module": "FrappeOps",
+ "name": "Bench",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Operator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Developer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Auditor",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "FrappeOps Viewer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "field_order": [
+  "section_auto_1",
+  "naming_series",
+  "bench_name",
+  "server",
+  "organization",
+  "column_break_auto_2",
+  "status",
+  "bench_path",
+  "environment",
+  "versions_section",
+  "frappe_version",
+  "bench_version",
+  "python_version",
+  "column_break_auto_3",
+  "node_version",
+  "git_branch",
+  "runtime_section",
+  "scheduler_state",
+  "worker_count",
+  "webserver_port",
+  "column_break_auto_4",
+  "socketio_port",
+  "last_health_check",
+  "is_protected",
+  "section_wide_5",
+  "notes"
+ ]
+}

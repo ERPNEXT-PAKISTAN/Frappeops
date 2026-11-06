@@ -1,33 +1,47 @@
-### FrappeOps
+# FrappeOps
 
-Frappe and ERPNext Infrastructure Control Center
+Frappe & ERPNext Infrastructure Control Center.
 
-### Installation
+FrappeOps is a **control plane** for managing Frappe/ERPNext infrastructure: servers, benches, sites, apps, domains, nginx, SSL, backups, deployments, monitoring, and AI-assisted operations.
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+## Status
 
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch version-16
-bench install-app frappeops
+**0.3.0 — Local MVP** on `frappeops.local`: full Waves A–J control plane (ops, domains, agents/poll, deploy/DR, alerts, AI, bench/SSL tooling). See `docs/RELEASE_0.3.0.md`.
+
+## Important safety rules
+
+- Do **not** install FrappeOps on customer/production ERPNext sites.
+- Use a dedicated control site (development: `frappeops.local`).
+- Never destroy or modify existing production sites without explicit approval.
+- No arbitrary shell from the UI — operations use an allowlisted registry.
+- No fake “success” UI for unimplemented features.
+
+## Development control site
+
+```text
+Site:  frappeops.local
+Bench: /home/frappe/frappe-bench
+App:   apps/frappeops
 ```
 
-### Contributing
+Protected existing site on this bench: treat as production-adjacent — do not target it for destructive tests.
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+## Docs
 
-```bash
-cd apps/frappeops
-pre-commit install
-```
+- [ARCHITECTURE.md](ARCHITECTURE.md)
+- [DEVELOPMENT.md](DEVELOPMENT.md)
+- [SECURITY.md](SECURITY.md)
+- [DEPLOYMENT.md](DEPLOYMENT.md)
+- [AGENTS.md](AGENTS.md)
+- [CHANGELOG.md](CHANGELOG.md)
+- [docs/AGENT.md](docs/AGENT.md)
+- [docs/ACCEPTANCE_CHECKLIST.md](docs/ACCEPTANCE_CHECKLIST.md)
+- [docs/RELEASE_0.3.0.md](docs/RELEASE_0.3.0.md)
+- [docs/SECURITY_HARDENING.md](docs/SECURITY_HARDENING.md)
+- [docs/AI.md](docs/AI.md)
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+Master specification (bench root): `FRAPPEOPS_MASTER_SPEC.md`
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+## License
 
-### License
-
-mit
+MIT

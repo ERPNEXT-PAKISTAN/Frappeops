@@ -1,0 +1,23 @@
+{
+ "creation": "2026-08-13 12:40:00.000000",
+ "docstatus": 0,
+ "doctype": "Page",
+ "icon": "server",
+ "idx": 0,
+ "modified": "2026-08-13 12:40:00.000000",
+ "modified_by": "Administrator",
+ "module": "FrappeOps",
+ "name": "frappeops-server",
+ "owner": "Administrator",
+ "page_name": "frappeops-server",
+ "roles": [
+  {"role": "System Manager"},
+  {"role": "FrappeOps Administrator"},
+  {"role": "FrappeOps Operator"},
+  {"role": "FrappeOps Developer"},
+  {"role": "FrappeOps Auditor"},
+  {"role": "FrappeOps Viewer"}
+ ],
+ "standard": "Yes",
+ "title": "Server Control"
+}
